@@ -231,3 +231,26 @@ b {
     padding-top: 50px;
     padding-bottom: 150px;
   }
+
+  .card-item {
+    height: 360px;
+  }
+
+  .card-item img {
+    width: 100%;
+    border-radius: 11px;
+  }
+  /* --------- mostra quando o nome do card for grande coloca os ...  ------*/
+  .card-item .title-produto{
+    color: var(--color-black);
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    height: 40px;
+    margin-bottom: 0px;
+  }
+
+  .card-item .price-produto {
+    color: var(--color-primary);
+    font-size: 24px;
+  }
