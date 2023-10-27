@@ -224,3 +224,10 @@ b {
   height: 500px;
   background-image: url('../img/bg-icons-2.png');
  }
+
+  /* --------- Cardápio  ------*/
+
+  .cardapio {
+    padding-top: 50px;
+    padding-bottom: 150px;
+  }
