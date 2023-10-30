@@ -10,6 +10,7 @@
 
 :root {
   --color-background: #fffdf7;
+  --color-black-heavy: #000000;
   --color-black: #212121;
   --color-text: #4f4f4f;
   --color-text-out: #90908e;
@@ -232,6 +233,10 @@ b {
     padding-bottom: 150px;
   }
 
+  .container-menu {
+    margin-bottom: 40px;
+  }
+
   .card-item {
     height: 360px;
   }
@@ -253,4 +258,60 @@ b {
   .card-item .price-produto {
     color: var(--color-primary);
     font-size: 24px;
+  }
+
+  .card-item .add-carrinho {
+    display: none;
+    text-align: center;
+    height: 30px;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .btn-menos {
+    color: var(--color-black-heavy);
+    padding: 5px 7px;
+    border: 2px solid var(--color-black-heavy);
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    font-size: 14px;
+    cursor: pointer;
+  }
+  .btn-mais {
+    color: var(--color-black-heavy);
+    padding: 5px 7px;
+    border: 2px solid var(--color-black-heavy);
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    font-size: 14px;
+    cursor: pointer;
+  }
+
+  .add-numero-itens {
+    color: var(--color-black-heavy);
+    padding: 2px 15px;
+    border-top: 2px solid var(--color-black-heavy);
+    border-bottom: 2px solid var(--color-black-heavy);
+    font-size: 18px;
+  }
+
+  .btn-add {
+    border: 2px solid var(--color-black-heavy);
+    font-size: 16px;
+    padding: 4px 10px;
+    border-radius: 10px;
+    color: var(--color-white);
+    background-color: var(--color-black-heavy);
+    margin-left: 15px;
+  }
+
+  .card-item:hover {
+    background-color: var(--color-primary);
+  }
+
+  .card-item:hover .title-produto {
+    display: none;
+  }
+  .card-item:hover .add-carrinho {
+    display: flex;
   }
