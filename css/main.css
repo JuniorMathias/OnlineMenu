@@ -546,3 +546,22 @@ b {
       width: 100px;
       border-radius: 11px;
     }
+
+    .modal-full .title-produto {
+      color: var(--color-black);
+      font-size: 20px;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden;
+      margin-bottom: 0;
+    }
+
+    .modal-full .price-produto {
+      color: var(--color-primary);
+      font-size: 24px;
+      margin-bottom: 0;
+    }
+
+    .modal-full .dados-produto {
+      
+    }
