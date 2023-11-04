@@ -563,5 +563,45 @@ b {
     }
 
     .modal-full .dados-produto {
-      
+      flex: 1;
+      padding-left: 25px;
+      padding-right: 25px;
+    }
+
+    .modal-full .add-carrinho { 
+      display: flex;
+      text-align: center;
+      height: 30px;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .btn-remove {
+      border: 2px solid var(--color-red);
+      font-size: 16px;
+      padding: 4px 10px;
+      border-radius: 10px;
+      color: var(--color-white);
+      background-color: var(--color-red);
+      margin-left: 15px;
+    }
+
+    .container-total {
+      padding-top: 20px;
+      border-top: 1px solid var(--color-separate);
+    }
+
+    .container-total .texto-entrega {
+      color: var(--color-separate);
+    }
+
+    .container-total .texto-total {
+      color: var(--color-black);
+      font-size: 20px;
+      margin-top: 10px;
+    }
+
+    .container-total .valor-total {
+      color: var(--color-primary);
+      font-size: 24px;
     }
