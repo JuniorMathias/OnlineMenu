@@ -488,6 +488,16 @@ b {
       overflow-x: hidden;
     }
 
+    .m-body::-webkit-scrollbar {
+      width: 6px;
+      background-color: transparent !important;
+    }
+    .m-body::-webkit-scrollbar-thumb {
+      background-color: var(--color-white);
+    }
+    .m-body::-webkit-scrollbar-track {
+      background-color: transparent !important;
+    }
     /*-------------- Carrinho Modal ---------- */
 
     .etapas{
