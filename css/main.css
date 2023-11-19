@@ -638,3 +638,35 @@ b {
       right: 25px;
       top: 38px;
     }
+
+     /*-------------- Parte 3 da compra finalização do pedido ---------- */
+    .img-produto-resumo img {
+      width: 50px;
+      border-radius: 11px;
+    }
+
+    .item-carrinho.resumo {
+      padding-top: 10px;
+      padding-bottom: 10px;
+    }
+
+    .title-produto-resumo {
+      color: var(--color-black);
+      font-size: 18px;
+      text-overflow: ellipsis; /* ---- são os três pontinhos --------() */
+      white-space: nowrap;
+      overflow: hidden;
+      margin-bottom: 0;
+    }
+
+    .price-produto-resumo {
+      color: var(--color-primary);
+      font-size: 16px;
+      margin-bottom: 0;
+    }
+    
+    .quantidade-produto-resumo {
+      color: var(--color-black);
+      font-size: 20px;
+      margin-bottom: 0;
+    }
