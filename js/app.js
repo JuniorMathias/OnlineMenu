@@ -7,20 +7,30 @@ var cardapio = {};
 
 cardapio.eventos = {
   init: () => {
-      cardapio.metodos.obterItensCardapios();
+      cardapio.metodos.obterItensCardapio();
   }
 }
 
 cardapio.metodos = {
-  //obtem a lista de itens do cardápio
-  obterItensCardapios: () => {
-      var filtro = MENU['burgers'];
+  //obtem a lista de itens do cardápio e categoria é do cardápio
+  obterItensCardapio: (categoria = 'burgers') => {
+      var filtro = MENU[categoria];
 
+      $("#itensCardapio").html('');
       $.each(filtro, (i, e) => {
-          let temp = cardapio.templates.item;
-          $("itensCardapio").append(temp);
+          //linha abaixo está pegando do dados js e trocando o valor e replace com o "E" que é do dados.js e colocando o campo img 
+          let temp = cardapio.templates.item
+            .replace(/\${img}/g, e.img)
+            .replace(/\${nome}/g, e.name)
+            .replace(/\${preco}/g, e.price.toFixed(2).replace('.' , ','));
+
+          $("#itensCardapio").append(temp);
       })
-  }
+      //remover o ativo
+      $(".container-menu a").removeClass('active');
+      //seta o menu para ativo
+      $("#menu-" + categoria).addClass('active');
+  },
 }
 
 cardapio.templates = {
@@ -28,13 +38,13 @@ cardapio.templates = {
       <div class="col-3 mb-5">
           <div class="card card-item">
           <div class="img-produto">
-              <img src="./img/cardapio/burguers/burger-au-poivre-kit-4-pack.3ca0e39b02db753304cd185638dad518.jpg" />
+              <img src="\${img}" /> 
           </div>
           <p class="title-produto text-center mt-4">
-              <b>Nome</b>
+              <b>\${nome}</b>
           </p>
           <p class="price-produto text-center">
-              <b>R$ 154,90</b>
+              <b>R$ \${preco}</b>
           </p>
           <div class="add-carrinho">
               <span class="btn-menos"> <i class="fas fa-minus"> </i></span>
