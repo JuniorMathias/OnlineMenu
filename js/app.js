@@ -5,6 +5,8 @@ $(document).ready(function () {
 // aula 1 de js 
 var cardapio = {};
 
+var MEU_CARRINHO = [];
+
 cardapio.eventos = {
   init: () => {
       cardapio.metodos.obterItensCardapio();
@@ -65,6 +67,44 @@ cardapio.metodos = {
   aumentarQuantidade: (id) => {
     let qntdAtual = parseInt($("#qntd-" + id).text());
       $("#qntd-" + id).text(qntdAtual +1);
+  },
+
+  //adicionar item ao carrinho o item do cardapio
+  adicionarAoCarrinho: (id) => {
+    let qntdAtual = parseInt($("#qntd-" + id).text());
+
+    if(qntdAtual > 0){
+      //obter a categoria ativa
+      var categoria = $(".container-menu a.active").attr('id').split('menu-')[1];
+
+      //obtem a lista de itens
+      let filtro = MENU[categoria];
+
+      //obtem o item aula 22, o grep é como um each mas retorna um objeto inteiro
+      let item = $.grep(filtro, (e , i) => { return e.id == id }); // vai percorrer todos os id's e vai pegar somente o que for igual o que passei no id
+      
+      if(item.length > 0) {
+
+        //VALIDAR SE JÁ EXISTE ESSE ITEM NO CARRINHO
+        let existe = $.grep(MEU_CARRINHO, (elem , index) => { return elem.id == id });
+
+        //caso já exista o item no carrinho só altera a quantidade
+        if(existe.length > 0){
+          let objIndex = MEU_CARRINHO.findIndex((obj => obj.id == id));
+          MEU_CARRINHO[objIndex].qntd = MEU_CARRINHO[objIndex].qntd + qntdAtual;
+        }
+        //caso não exista o item no carrinho, adiciona ele
+        else {
+          item[0].qntd = qntdAtual;
+          MEU_CARRINHO.push(item[0])
+        }
+        
+        $("#qntd-" + id).text(0);
+
+
+      }
+    }
+
   }
 
 }
@@ -86,7 +126,7 @@ cardapio.templates = {
               <span class="btn-menos" onClick="cardapio.metodos.diminuirQuantidade('\${id}')"> <i class="fas fa-minus"> </i></span>
               <span class="add-numero-itens" id="qntd-\${id}"> 0 </span>
               <span class="btn-mais" onClick="cardapio.metodos.aumentarQuantidade('\${id}')"> <i class="fas fa-plus"> </i></span>
-              <span class="btn btn-add"> <i class="fas fa-shopping-bag"> </i></span>
+              <span class="btn btn-add" onClick="cardapio.metodos.adicionarAoCarrinho('\${id}')"> <i class="fas fa-shopping-bag"> </i></span>
           </div>
           </div>
       </div>
