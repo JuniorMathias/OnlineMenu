@@ -127,19 +127,63 @@ cardapio.metodos = {
     //mostra o valor total que foi adicionado no carrinho  aula 23
     $(".badge-total-carrinho").html(total);
   },
+
+  //abrir modal de carrinho aula 23
+  abrirCarrinho: (abrir) => {
+    if(abrir){
+      $("#modalCarrinho").removeClass('hidden');
+    } else {
+      $("#modalCarrinho").addClass('hidden');
+    }
+
+  },
+
+  // altera os textos e exibe os botões das etapas
+  carregarEtapa: (etapa) => {
+    if(etapa == 1){
+      $("#lblTituloEtapa").text('Seu carrinho:');
+    }
+    if(etapa == 2){
+      
+    }
+    if(etapa == 3){
+      
+    }
+  },
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // mensagem que aparece no alerta
   mensagem: (texto, cor = 'red', tempo = 3500) => {
 
     //cria um número aleatório e multiplica pela a data atual, id nunca vai se repetir aula 23
     let id = Math.floor(Date.now() * Math.random()).toString();
     
-    let msg = ` <div id="msg-${id}" class="animeted fadeInDown toast ${cor}">${texto}</div>`;
+    let msg = ` <div id="msg-${id}" class="animated fadeInDown toast ${cor}">${texto}</div>`;
     $("#container-mensagens").append(msg);
 
     setTimeout(() => {
       $("#msg-" + id).removeClass('fadeInDown');
       $("#msg-" + id).addClass('fadeOutUp');
-      $("#msg-" + id).remove();
+      setTimeout(() => {
+        $("#msg-" + id).remove();
+      }, 800)
+      
     },tempo);
 
   }
