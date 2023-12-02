@@ -205,8 +205,7 @@ cardapio.metodos = {
 
       //pega o elemento atual do meu carrinho cria a var e altera de acordo com o q vier no array no template itemCarrinho
       $.each(MEU_CARRINHO, (i, e) => {
-        let temp = cardapio.templates.itemCarrinho
-        .replace(/\${img}/g, e.img)
+        let temp = cardapio.templates.itemCarrinho.replace(/\${img}/g, e.img)
         .replace(/\${nome}/g, e.name)
         .replace(/\${preco}/g, e.price.toFixed(2).replace('.' , ','))
         .replace(/\${id}/g, e.id)
@@ -219,24 +218,44 @@ cardapio.metodos = {
       $("#itensCarrinho").html('<p class="carrinho-vazio"> <i class="fa fa-shopping-bag"></i>Seu carrinho está vazio.</p>');
     }
   },
-  //aula 25
+  //aula 25 diminuir a quantidade do modal para o carrinho
   diminuirQuantidadeCarrinho: (id) => {
     let qntdAtual = parseInt($("#qntd-carrinho-" + id).text());
 
     if(qntdAtual > 1){
-      $("#qntd-carrinho--" + id).text(qntdAtual -1);
+
+      $("#qntd-carrinho-" + id).text(qntdAtual -1);
+      cardapio.metodos.atualizarCarrinho(id, qntdAtual -1);
+
     } else {
       cardapio.metodos.removerItemCarrinho(id);
     }
 
   },
 
+  //aula 25 aumentar a quantidade do modal para o carrinho
   aumentarQuantidadeCarrinho: (id) => {
+    let qntdAtual = parseInt($("#qntd-carrinho-" + id).text());
+    $("#qntd-carrinho-" + id).text(qntdAtual + 1);
+    cardapio.metodos.atualizarCarrinho(id, qntdAtual + 1);
 
   },
 
+  // botão remover item do carrinho
   removerItemCarrinho: (id) => {
+    //mmeu carrinho é filtrado, e retorna o que não tem o id, ele retira 
+    MEU_CARRINHO = $.grep(MEU_CARRINHO, (e, i) => { return e.id != id });
+    cardapio.metodos.carregarCarrinho();
+    cardapio.metodos.atualizarBadgeTotal();
 
+  },
+  //atualiza o carrinho com a quantidade atual aula 25 todo abaixo metodo atualizarcarrinho
+  atualizarCarrinho: (id, qntd) => {
+    let objIndex = MEU_CARRINHO.findIndex((obj => obj.id == id));
+    MEU_CARRINHO[objIndex].qntd = qntd;
+
+    //atualiza o botão carrinho com a quantidade atualizada
+    cardapio.metodos.atualizarBadgeTotal();
   },
 
 
