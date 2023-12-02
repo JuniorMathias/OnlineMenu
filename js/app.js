@@ -98,12 +98,49 @@ cardapio.metodos = {
           item[0].qntd = qntdAtual;
           MEU_CARRINHO.push(item[0])
         }
-        
+
+        cardapio.metodos.mensagem('Item adicionado ao carrinho', 'green');
         $("#qntd-" + id).text(0);
 
+        cardapio.metodos.atualizarBadgeTotal();
 
       }
     }
+
+  },
+
+  //atualiza o total dos Meu carrinho
+  atualizarBadgeTotal: () => {
+    var total = 0;
+    // e é o total que tem no carrinho atualmente
+    $.each(MEU_CARRINHO, (i,e) => {
+      total += e.qntd
+    })
+    if(total > 0) {
+      $(".botao-carrinho").removeClass("hidden");
+      $(".container-total-carrinho").removeClass("hidden");
+    }else {
+      $(".botao-carrinho").addClass("hidden");
+      $(".container-total-carrinho").addClass("hidden");
+    }
+
+    //mostra o valor total que foi adicionado no carrinho  aula 23
+    $(".badge-total-carrinho").html(total);
+  },
+// mensagem que aparece no alerta
+  mensagem: (texto, cor = 'red', tempo = 3500) => {
+
+    //cria um número aleatório e multiplica pela a data atual, id nunca vai se repetir aula 23
+    let id = Math.floor(Date.now() * Math.random()).toString();
+    
+    let msg = ` <div id="msg-${id}" class="animeted fadeInDown toast ${cor}">${texto}</div>`;
+    $("#container-mensagens").append(msg);
+
+    setTimeout(() => {
+      $("#msg-" + id).removeClass('fadeInDown');
+      $("#msg-" + id).addClass('fadeOutUp');
+      $("#msg-" + id).remove();
+    },tempo);
 
   }
 
