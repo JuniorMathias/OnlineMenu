@@ -279,10 +279,8 @@ cardapio.metodos = {
 
     $.each(MEU_CARRINHO, (i,e) => {
       VALOR_CARRINHO += parseFloat(e.price * e.qntd);
-      var teste = $("#queijo-" + e.id)
 
       $("#queijo-" + e.id).on("change", function() {
-        console.log(teste)
         // Get the checkbox state
         var isChecked = $(this).is(":checked");
   
