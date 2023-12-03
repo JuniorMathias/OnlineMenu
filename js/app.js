@@ -7,6 +7,10 @@ var cardapio = {};
 
 var MEU_CARRINHO = [];
 
+var VALOR_CARRINHO = 0;
+var VALOR_ENTREGA = 5;
+var QUEIJAO = 1;
+
 cardapio.eventos = {
   init: () => {
       cardapio.metodos.obterItensCardapio();
@@ -212,10 +216,15 @@ cardapio.metodos = {
         .replace(/\${qntd}/g, e.qntd);
 
         $("#itensCarrinho").append(temp);
+        //último item do carrinho aula 26
+        if((i+1) == MEU_CARRINHO.length){
+          cardapio.metodos.carrgarValores();
+        }
       })
 
     } else {
       $("#itensCarrinho").html('<p class="carrinho-vazio"> <i class="fa fa-shopping-bag"></i>Seu carrinho está vazio.</p>');
+      cardapio.metodos.carrgarValores();
     }
   },
   //aula 25 diminuir a quantidade do modal para o carrinho
@@ -256,6 +265,49 @@ cardapio.metodos = {
 
     //atualiza o botão carrinho com a quantidade atualizada
     cardapio.metodos.atualizarBadgeTotal();
+    //atualiza os valores totais do carrinho
+    cardapio.metodos.carrgarValores();
+  },
+
+  // aula 26 carrega os valores do subtotal, entrega e total
+  carrgarValores: () => {
+    VALOR_CARRINHO = 0;
+  
+    $("#lblSubTotal").text('R$ 0,00');
+    $("#lblValorEntrega").text('+ R$ 0,00');
+    $("#lblValorTotal").text('R$ 0,00');
+
+    $.each(MEU_CARRINHO, (i,e) => {
+      VALOR_CARRINHO += parseFloat(e.price * e.qntd);
+      var teste = $("#queijo-" + e.id)
+
+      $("#queijo-" + e.id).on("change", function() {
+        console.log(teste)
+        // Get the checkbox state
+        var isChecked = $(this).is(":checked");
+  
+        // Update the total based on the checkbox state
+        if (isChecked) {
+          // If checked, increase the total value by the value of QUEIJAO
+          VALOR_CARRINHO += QUEIJAO;
+        } else {
+          // If unchecked, decrease the total value by the value of QUEIJAO
+          VALOR_CARRINHO -= QUEIJAO;
+        }
+  
+        // Update the displayed values
+        $("#lblSubTotal").text(`R$ ${(VALOR_CARRINHO).toFixed(2).replace('.', ',')}`);
+        $("#lblValorTotal").text(`R$ ${(VALOR_CARRINHO + VALOR_ENTREGA).toFixed(2).replace('.', ',')}`);
+      });
+    
+
+      if((i + 1) == MEU_CARRINHO.length) {
+        $("#lblSubTotal").text(`R$ ${VALOR_CARRINHO.toFixed(2).replace('.', ',')}`);
+        $("#lblValorEntrega").text(`+ R$ ${VALOR_ENTREGA.toFixed(2).replace('.', ',')}`);
+        $("#lblValorTotal").text(`R$ ${(VALOR_CARRINHO + VALOR_ENTREGA).toFixed(2).replace('.', ',')}`);
+      }
+    })
+
   },
 
 
@@ -306,11 +358,12 @@ cardapio.templates = {
   itemCarrinho: `
     <div class="col-12 item-carrinho">
       <div class="img-produto">
-      <img src="\${img}" /> 
+        <img src="\${img}" /> 
       </div>
       <div class="dados-produto"> 
         <p class="title-produto" ><b> \${nome}</b></p>
         <p class="price-produto" ><b> R$ \${preco}</b></p>
+        <p class="" ><b> <input type="checkbox" id="queijo-\${id}"> Queijo</input></b></p>
       </div>
       <div class="add-carrinho">
         <span class="btn-menos" onClick="cardapio.metodos.diminuirQuantidadeCarrinho('\${id}')"> <i class="fas fa-minus"> </i></span>

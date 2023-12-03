@@ -91,14 +91,14 @@ var MENU = {
             "img": "./img/cardapio/burguers/Gramercy-Tavern-Burger-and-Kielbasa-Kit-6.4.21-72ppi-1x1-15.jpg",
             "name": "Gramercy Tavern",
             "dsc": "The Gramercy Tavern Burger - 4 Pack",
-            "price": 99
+            "price": 10
         },
         {
             "id": "shake-shack-shackburger-8-pack",
             "img": "./img/cardapio/burguers/shake-shack-shackburger-8-pack.973a5e26836ea86d7e86a327becea2b0.jpg",
             "name": "Shake Shack",
             "dsc": "Shake Shack ShackBurger® - 8 Pack",
-            "price": 49
+            "price": 10
         },
         {
             "id": "gotts-cheeseburger-kit-for-4",
