@@ -307,12 +307,48 @@ cardapio.metodos = {
     })
 
   },
+
   carregarEndereco: () => {
     if(MEU_CARRINHO.length <= 0){
       cardapio.metodos.mensagem(`Seu carrinho está vazio`);
       return;
     }
     cardapio.metodos.carregarEtapa(2);
+  },
+  //API VIA CEP
+  buscarCep: () => {
+    //cria a variavel com o valor do cep
+    var cep = $("#txtCEP").val().trim().replace(/\D/g, '');
+
+    if(cep != "") {
+      //expressão regular para validar o cep
+      var validacep = /^[0-9]{8}$/;
+
+      if(validacep.test(cep)) {
+        $.getJSON("http://viacep.com.br/ws/" + cep + "/json/?callback=?", function (dados){
+
+          if(!("erro" in dados)) {
+            //Atualizar os campos com os valores retornados
+            $("#txtEndereco").val(dados.logradouro)
+
+          }else {
+            cardapio.metodos.mensagem(`CEP não encontrado. Preencha as informações manualmente.`);
+            $("#txtEndereco").focus();
+          }
+
+        })
+
+      }else{
+        cardapio.metodos.mensagem(`Formato do CEP inválido.`);
+        $("#txtCEP").focus();
+      }
+
+
+
+    } else {
+      cardapio.metodos.mensagem(`Informe o CEP, por favor.`);
+      $("#txtCEP").focus();
+    }
   },
 
 
