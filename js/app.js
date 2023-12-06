@@ -6,7 +6,7 @@ $(document).ready(function () {
 var cardapio = {};
 
 var MEU_CARRINHO = [];
-
+var MEU_ENDERECO = null;
 var VALOR_CARRINHO = 0;
 var VALOR_ENTREGA = 5;
 var QUEIJAO = 1;
@@ -329,7 +329,11 @@ cardapio.metodos = {
 
           if(!("erro" in dados)) {
             //Atualizar os campos com os valores retornados
-            $("#txtEndereco").val(dados.logradouro)
+            $("#txtEndereco").val(dados.logradouro);
+            $("#txtBairro").val(dados.bairro);
+            $("#txtCidade").val(dados.localidade);
+            $("#ddlUf").val(dados.uf);
+            $("#txtNumero").focus();
 
           }else {
             cardapio.metodos.mensagem(`CEP não encontrado. Preencha as informações manualmente.`);
@@ -351,6 +355,64 @@ cardapio.metodos = {
     }
   },
 
+  //validação antes de prosseguir para a etapa 3
+  resumoPedido: () => {
+    var cep = $("#txtCEP").val().trim();
+    var endereco = $("#txtEndereco").val().trim()
+    var bairro = $("#txtBairro").val().trim()
+    var cidade = $("#txtCidade").val().trim()
+    var uf = $("#ddlUf").val().trim()
+    var numero = $("#txtNumero").val().trim()
+    var complemento = $("#txtComplemento").val().trim()
+
+    if(cep.length <= 0) {
+      cardapio.metodos.mensagem(`Informe o CEP, por favor.`);
+      $("#txtCEP").focus();
+      return;
+    }
+    if(endereco.length <= 0) {
+      cardapio.metodos.mensagem(`Informe o Endereço, por favor.`);
+      $("#txtEndereco").focus();
+      return;
+    }
+    if(bairro.length <= 0) {
+      cardapio.metodos.mensagem(`Informe o Bairro, por favor.`);
+      $("#txtBairro").focus();
+      return;
+    }
+    if(cidade.length <= 0) {
+      cardapio.metodos.mensagem(`Informe a Cidade, por favor.`);
+      $("#txtCidade").focus();
+      return;
+    }
+    if(uf == "-1") {
+      cardapio.metodos.mensagem(`Informe a UF, por favor.`);
+      $("#ddlUf").focus();
+      return;
+    }
+    if(numero.length <= 0) {
+      cardapio.metodos.mensagem(`Informe a Número, por favor.`);
+      $("#txtNumero").focus();
+      return;
+    }
+
+    MEU_ENDERECO = {
+      cep: cep,
+      endereco: endereco,
+      bairro: bairro,
+      cidade: cidade,
+      uf: uf,
+      numero: numero,
+      complemento: complemento
+    }
+
+    cardapio.metodos.carregarEtapa(3);
+
+  },
+
+  carregarResumo: () => {
+
+  },
 
 // mensagem que aparece no alerta aula 23
   mensagem: (texto, cor = 'red', tempo = 3500) => {
