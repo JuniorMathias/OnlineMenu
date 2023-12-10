@@ -489,23 +489,6 @@
           <div class="col-12">
             <div class="row" id="listaItensResumo">
 
-              <div class="col-12 item-carrinho resumo">
-                <div class="img-produto-resumo">
-                  <img src="./img/cardapio/burguers/shake-shack-shackburger-8-pack.973a5e26836ea86d7e86a327becea2b0.jpg" />
-                </div>
-                <div class="dados-produto">
-                  <p class="title-produto-resumo">
-                    <b>Nome do Produto</b>
-                  </p>
-                  <p class="price-produto-resumo">
-                    <b>R$ 100,00</b>
-                  </p>
-                </div>
-                <p class="quantidade-produto-resumo">
-                  x <b>3</b>
-                </p>
-              </div>
-
             </div>
           </div>
 
@@ -521,11 +504,9 @@
             </div>
             <div class="dados-produto">
               <p class="texto-endereco">
-                <b id="resumoEndereco"> Rua Teste, 200, Bairro Teste</b>
+                <b id="resumoEndereco"></b>
               </p>
-              <p class="cidade-endereco" id="cidadeEndereco">
-                Cidade-Sp / 656555-5
-              </p>
+              <p class="cidade-endereco" id="cidadeEndereco"> </p>
             </div>
           </div>
 
@@ -554,7 +535,7 @@
         <a class="btn btn-yellow float-right" id="btnEtapaPedido" onclick="cardapio.metodos.carregarEndereco()">
           Continuar
         </a>
-        <a class="btn btn-yellow float-right hidden" id="btnEtapaEndereco" onclick="cardapio.metodos.revisarPedido()">
+        <a class="btn btn-yellow float-right hidden" id="btnEtapaEndereco" onclick="cardapio.metodos.resumoPedido()">
           Revisar Pedido
         </a>
         <a class="btn btn-yellow float-right hidden" id="btnEtapaResumo">
