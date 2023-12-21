@@ -9,11 +9,16 @@ var MEU_CARRINHO = [];
 var MEU_ENDERECO = null;
 var VALOR_CARRINHO = 0;
 var VALOR_ENTREGA = 5;
+var CELULAR_EMPRESA = '5585991956331';
 var QUEIJAO = 1;
+
 
 cardapio.eventos = {
   init: () => {
       cardapio.metodos.obterItensCardapio();
+      cardapio.metodos.carregarBotaoReserva();
+      cardapio.metodos.carregarBotaoLigar();
+      cardapio.metodos.carregarBotaoWpp();
   }
 }
 
@@ -446,15 +451,53 @@ cardapio.metodos = {
 
     $.each(MEU_CARRINHO, (i,e) => {
       itens += `*${e.qntd}x* ${e.name}.......R$ ${e.price.toFixed(2).replace('.',',')} \n`;
+      //último item
       if((i + 1) === MEU_CARRINHO.length){
         texto = texto.replace(/\${itens}/g,itens);
+
+        //converter a URL
+        let encode = encodeURI(texto);
+        let URL = `https://wa.me/${CELULAR_EMPRESA}?text=${encode}`;
+
+        $("#btnEtapaResumo").attr('href', URL);
       }
-
-
-      // http://viacep.com.br/ws/
     })
   },
 
+  //carrega o link de botão reserva
+  carregarBotaoReserva: () => {
+    var texto = 'Olá! gostaria de fazer uma *reserva:*';
+
+    let encode = encodeURI(texto);
+    let URL = `https://wa.me/${CELULAR_EMPRESA}?text=${encode}`;
+
+    $("#btnReserva").attr('href', URL);
+  },
+
+  carregarBotaoLigar: () => {
+    $("#btnLigar").attr('href', `tel:${CELULAR_EMPRESA}`);
+  },
+  carregarBotaoWpp: () => {
+    var texto = 'Olá!';
+
+    let encode = encodeURI(texto);
+    let URL = `https://wa.me/${CELULAR_EMPRESA}?text=${encode}`;
+
+    $("#btnWpp").attr('href', URL);
+  },
+  
+  abrirDepoimento: (depoimento) => {
+    $("#depoimento-1").addClass('hidden');
+    $("#depoimento-2").addClass('hidden');
+    $("#depoimento-3").addClass('hidden');
+
+    $("#btnDepoimento-1").removeClass('active');
+    $("#btnDepoimento-2").removeClass('active');
+    $("#btnDepoimento-3").removeClass('active');
+
+    $("#depoimento-" + depoimento).removeClass('hidden');
+    $("#btnDepoimento-" + depoimento).addClass('active');
+  },
 // mensagem que aparece no alerta aula 23
   mensagem: (texto, cor = 'red', tempo = 3500) => {
 
