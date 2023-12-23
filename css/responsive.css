@@ -1,0 +1,15 @@
+/* desktop col-lg 992 px+*/
+
+/* desktop e tablet col-md 768px a 991 px*/
+
+/* tablet col-sm 576px a 767 px*/
+
+@media (min-width: 576px) and (max-width: 767px){
+    
+}
+
+/* tablet col 0 px a 767 px*/
+
+@media (max-width: 767px){
+
+}
