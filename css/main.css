@@ -78,7 +78,7 @@ b {
   text-align: center;
   padding-top: 6px;
 }
- /* --------- banner  ------*/
+
 .banner{
   padding-top: 110px;
   padding-bottom: 220px;
@@ -177,49 +177,47 @@ b {
   color: var(--color-primary);
   right: 20px;
   bottom: 10px;
-
 }
 
- /* --------- Serviços  ------*/
- .servicos {
+.servicos {
   padding-top: 80px;
   padding-bottom: 150px;
- }
+}
 
- .hint-title {
+.hint-title {
   color: var(--color-primary);
   font-size: 16px;
   text-transform: uppercase;
   letter-spacing: 5px;
- }
+}
 
- .title {
+.title {
   color: var(--color-black);
   font-size: 40px;
   margin-top: 5px;
   margin-bottom: 30px;
- }
+}
 
- .card-icon {
+.card-icon {
   height: 150px;
   margin: 0 auto;
   margin-bottom: 30px;
   display: flex;
   justify-content: center;
   align-items: center;
- }
+}
 
- .card-text {
+.card-text {
   color: var(--color-text-out);
   font-size: 15px;
   padding: 0px 30px;
- }
+}
 
- .card-text p {
-  font-size: 22px;
-  color: var(--color-black);
-  margin-bottom: 10px;
- }
+.card-text p {
+font-size: 22px;
+color: var(--color-black);
+margin-bottom: 10px;
+}
 
  .background-servicos, .background-depoimentos {
   position: absolute;
@@ -229,193 +227,186 @@ b {
   background-image: url('../img/bg-icons-2.png');
  }
 
-  /* --------- Cardápio  ------*/
+.cardapio {
+  padding-top: 50px;
+  padding-bottom: 150px;
+}
+.background-cardapio {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 500px;
+  background-image: url('../img/bg-icons-1.png');
+}
 
-  .cardapio {
-    padding-top: 50px;
-    padding-bottom: 150px;
-  }
-  .background-cardapio {
-    position: absolute;
-    left: 0;
-    right: 0;
-    height: 500px;
-    background-image: url('../img/bg-icons-1.png');
-  }
+.container-menu {
+  margin-bottom: 40px;
+}
 
-  .container-menu {
-    margin-bottom: 40px;
-  }
+.card-item {
+  height: 360px;
+}
 
-  .card-item {
-    height: 360px;
-  }
+.card-item img {
+  width: 100%;
+  border-radius: 11px;
+}
+.card-item .title-produto{
+  color: var(--color-black);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  height: 40px;
+  margin-bottom: 0px;
+}
 
-  .card-item img {
-    width: 100%;
-    border-radius: 11px;
-  }
-  /* --------- mostra quando o nome do card for grande coloca os ...  ------*/
-  .card-item .title-produto{
-    color: var(--color-black);
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    overflow: hidden;
-    height: 40px;
-    margin-bottom: 0px;
-  }
+.card-item .price-produto {
+  color: var(--color-primary);
+  font-size: 24px;
+}
 
-  .card-item .price-produto {
-    color: var(--color-primary);
-    font-size: 24px;
-  }
+.card-item .add-carrinho {
+  display: none;
+  text-align: center;
+  height: 30px;
+  justify-content: center;
+  align-items: center;
+}
 
-  .card-item .add-carrinho {
-    display: none;
-    text-align: center;
-    height: 30px;
-    justify-content: center;
-    align-items: center;
-  }
+.btn-menos {
+  color: var(--color-black-heavy);
+  padding: 5px 7px;
+  border: 2px solid var(--color-black-heavy);
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  font-size: 14px;
+  cursor: pointer;
+}
+.btn-mais {
+  color: var(--color-black-heavy);
+  padding: 5px 7px;
+  border: 2px solid var(--color-black-heavy);
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  font-size: 14px;
+  cursor: pointer;
+}
 
-  .btn-menos {
-    color: var(--color-black-heavy);
-    padding: 5px 7px;
-    border: 2px solid var(--color-black-heavy);
-    border-top-left-radius: 10px;
-    border-bottom-left-radius: 10px;
-    font-size: 14px;
-    cursor: pointer;
-  }
-  .btn-mais {
-    color: var(--color-black-heavy);
-    padding: 5px 7px;
-    border: 2px solid var(--color-black-heavy);
-    border-top-right-radius: 10px;
-    border-bottom-right-radius: 10px;
-    font-size: 14px;
-    cursor: pointer;
-  }
+.add-numero-itens {
+  color: var(--color-black-heavy);
+  padding: 2px 15px;
+  border-top: 2px solid var(--color-black-heavy);
+  border-bottom: 2px solid var(--color-black-heavy);
+  font-size: 18px;
+}
 
-  .add-numero-itens {
-    color: var(--color-black-heavy);
-    padding: 2px 15px;
-    border-top: 2px solid var(--color-black-heavy);
-    border-bottom: 2px solid var(--color-black-heavy);
-    font-size: 18px;
-  }
+.btn-add {
+  border: 2px solid var(--color-black-heavy);
+  font-size: 16px;
+  padding: 4px 10px;
+  border-radius: 10px;
+  color: var(--color-white);
+  background-color: var(--color-black-heavy);
+  margin-left: 15px;
+}
 
-  .btn-add {
-    border: 2px solid var(--color-black-heavy);
-    font-size: 16px;
-    padding: 4px 10px;
-    border-radius: 10px;
-    color: var(--color-white);
-    background-color: var(--color-black-heavy);
-    margin-left: 15px;
-  }
+.card-item:hover {
+  background-color: var(--color-primary);
+}
 
-  .card-item:hover {
-    background-color: var(--color-primary);
-  }
+.card-item:hover .title-produto {
+  display: none;
+}
+.card-item:hover .add-carrinho {
+  display: flex;
+}
+.card-item:hover .price-produto {
+  color: var(--color-black-heavy) !important;
+  margin-top: 20px;
+}
 
-  .card-item:hover .title-produto {
-    display: none;
-  }
-  .card-item:hover .add-carrinho {
-    display: flex;
-  }
-  .card-item:hover .price-produto {
-    color: var(--color-black-heavy) !important;
-    margin-top: 20px;
-  }
+.depoimentos {
+  padding-top: 100px;
+  padding-bottom: 150px;
+}
 
-    /* --------- Depoimentos ---------- ------*/
+.card-depoimentos { 
+  height: 390px;
+  width: 390px;
+  border-radius: 120px;
+  background-color: var(--color-secondary);
+  position: absolute;
+  left: 0;
+}
 
-    .depoimentos {
-      padding-top: 100px;
-      padding-bottom: 150px;
-    }
+.container-dados-depoimento {
+  display: flex;
+}
 
-    .card-depoimentos { 
-      height: 390px;
-      width: 390px;
-      border-radius: 120px;
-      background-color: var(--color-secondary);
-      position: absolute;
-      left: 0;
-    }
+.depoimento {
+  margin-top: 70px;
+}
 
-    .container-dados-depoimento {
-      display: flex;
-    }
+.imagem-depoimento {
+  width: 65px;
+  height: 65px;
+  background-color: var(--color-white);
+  border-radius: 50px;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin-right: 15px;
+}
 
-    .depoimento {
-      margin-top: 70px;
-    }
+#depoimento-1 .imagem-depoimento{
+  background-image: url('../img/diego.jpg');
+  background-size: cover;
+}
+#depoimento-2 .imagem-depoimento{
+  background-image: url('../img/ana.jpg');
+  background-size: cover;
+}
+#depoimento-3 .imagem-depoimento{
+  background-image: url('../img/joao.jpg');
+  background-size: cover;
+}
 
-    .imagem-depoimento {
-      width: 65px;
-      height: 65px;
-      background-color: var(--color-white);
-      border-radius: 50px;
-      background-repeat: no-repeat;
-      background-position: center;
-      margin-right: 15px;
-    }
+.nome-depoimento {
+  color: var(--color-black);
+  font-size: 22px;
+  margin-bottom: 5px;
+}
 
-    #depoimento-1 .imagem-depoimento{
-      background-image: url('../img/diego.jpg');
-      background-size: cover;
-    }
-    #depoimento-2 .imagem-depoimento{
-      background-image: url('../img/ana.jpg');
-      background-size: cover;
-    }
-    #depoimento-3 .imagem-depoimento{
-      background-image: url('../img/joao.jpg');
-      background-size: cover;
-    }
+.nota-depoimento {
+  color: var(--color-primary);
+}
+.nota-depoimento span{
+  color: var(--color-black);
+}
 
-    .nome-depoimento {
-      color: var(--color-black);
-      font-size: 22px;
-      margin-bottom: 5px;
-    }
+.texto-depoimento {
+  display: flex;
+  font-size: 16px;
+  color: var(--color-black);
+}
+.texto-depoimento i {
+  font-size: 30px;
+  color: var(--color-primary);
+}
+.texto-depoimento i:first-child {
+  padding-left: 10px;
+  padding-right: 35px;
+}
+.texto-depoimento i:last-child {
+  padding-left: 45px;
+  display: flex;
+  justify-content: center;
+  align-items: end;
+}
 
-    .nota-depoimento {
-      color: var(--color-primary);
-    }
-    .nota-depoimento span{
-      color: var(--color-black);
-    }
-
-    .texto-depoimento {
-      display: flex;
-      font-size: 16px;
-      color: var(--color-black);
-    }
-    .texto-depoimento i {
-      font-size: 30px;
-      color: var(--color-primary);
-    }
-    .texto-depoimento i:first-child {
-      padding-left: 10px;
-      padding-right: 35px;
-    }
-    .texto-depoimento i:last-child {
-      padding-left: 45px;
-      display: flex;
-      justify-content: center;
-      align-items: end;
-    }
-
-    /* --------- Reserva ---------- ------*/
-
-    .reserva {
-      padding-top: 100px;
-      padding-bottom: 150px;
-    }
+.reserva {
+  padding-top: 100px;
+  padding-bottom: 150px;
+}
 
 .card-secondary {
   background-color: var(--color-secondary);
