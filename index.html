@@ -399,6 +399,18 @@
         </div>
 
         <div id="localEntrega" class="row mr-0 ml-0 animated fadeIn hidden"> 
+          <div class="col-12 col-lg-6 col-md-6 col-sm-12">
+            <div class="form-group">
+              <label>Nome:</label>
+              <input id="txtNome" type="text" class="form-control" />
+            </div>
+          </div>
+          <div class="col-12 col-lg-6 col-md-6 col-sm-12">
+            <div class="form-group">
+              <label>Telefone:</label>
+              <input id="txtTelefone" type="text" class="form-control" maxlength="14" placeholder="(XX) XXXX-XXXX" oninput="formatarTelefone(this)" onkeypress="return validarNumero(event)" />
+            </div>
+          </div>
           <div class="col-12 col-lg-4 col-md-4 col-sm-12">
             <div class="form-group container-cep">
               <label>CEP:</label>
@@ -410,7 +422,6 @@
           </div>
 
           <div class="col-8 no-mobile"></div>
-
           <div class="col-12 col-lg-6 col-md-6 col-sm-12">
             <div class="form-group">
               <label>Endereço:</label>

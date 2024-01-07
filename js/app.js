@@ -12,6 +12,20 @@ var VALOR_ENTREGA = 5;
 var CELULAR_EMPRESA = '5585991956331';
 var QUEIJAO = 1;
 
+function formatarTelefone(input) {
+  let numeroLimpo = input.value.replace(/\D/g, '');
+  let numeroFormatado = `(${numeroLimpo.slice(0, 2)}) ${numeroLimpo.slice(2, 6)}-${numeroLimpo.slice(6, 10)}`;
+  input.value = numeroFormatado;
+}
+function validarNumero(event) {
+  const codigoTecla = event.keyCode || event.which;
+  if (codigoTecla >= 48 && codigoTecla <= 57) {
+    return true;
+  } else {
+    event.preventDefault();
+    return false;
+  }
+}
 
 cardapio.eventos = {
   init: () => {
@@ -362,6 +376,8 @@ cardapio.metodos = {
 
   //validação antes de prosseguir para a etapa 3
   resumoPedido: () => {
+    var nome = $("#txtNome").val().trim();
+    var telefone = $("#txtTelefone").val().trim().replace(/(\d{2})(\d{5})(\d{4})/, '($1) $2-$3');
     var cep = $("#txtCEP").val().trim();
     var endereco = $("#txtEndereco").val().trim()
     var bairro = $("#txtBairro").val().trim()
@@ -370,6 +386,16 @@ cardapio.metodos = {
     var numero = $("#txtNumero").val().trim()
     var complemento = $("#txtComplemento").val().trim()
 
+    if(nome.length <= 0) {
+      cardapio.metodos.mensagem(`Informe o seu Nome, por favor.`);
+      $("#txtNome").focus();
+      return;
+    }
+    if(telefone.length <= 0) {
+      cardapio.metodos.mensagem(`Informe o seu Telefone, por favor.`);
+      $("#txtTelefone").focus();
+      return;
+    }
     if(cep.length <= 0) {
       cardapio.metodos.mensagem(`Informe o CEP, por favor.`);
       $("#txtCEP").focus();
@@ -402,6 +428,8 @@ cardapio.metodos = {
     }
 
     MEU_ENDERECO = {
+      nome: nome,
+      telefone: telefone,
       cep: cep,
       endereco: endereco,
       bairro: bairro,
@@ -440,7 +468,10 @@ cardapio.metodos = {
   finalizarPedido: () => {
     if(MEU_CARRINHO.length > 0 && MEU_ENDERECO != null){
       var texto = 'Olá! gostaria de fazer um pedido:';
-      texto += `\n*Itens do pedido:*\n\n\${itens}`;
+      texto += `\n*Dados do Cliente:*`;
+      texto += `\n Nome: ${MEU_ENDERECO.nome}`
+      texto += `\n Telefone: ${MEU_ENDERECO.telefone}`
+      texto += `\n\n*Itens do pedido:*\n\n\${itens}`;
       texto += `\n*Endereço de entrega:*`;
       texto += `\n${MEU_ENDERECO.endereco},${MEU_ENDERECO.numero},${MEU_ENDERECO.bairro}`
       texto += `\n${MEU_ENDERECO.cidade}-${MEU_ENDERECO.uf}/${MEU_ENDERECO.cep},${MEU_ENDERECO.complemento} `
