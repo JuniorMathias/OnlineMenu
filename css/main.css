@@ -255,9 +255,8 @@ margin-bottom: 10px;
   color: var(--color-black);
   text-overflow: ellipsis;
   white-space: nowrap;
-  /* overflow: hidden; */
+  overflow: hidden;
   height: 40px;
-  margin-top: 3%;
   margin-bottom: 0;
 }
 
@@ -275,7 +274,7 @@ margin-bottom: 10px;
 .card-item .add-carrinho {
   display: none;
   text-align: center;
-  height: 30px;
+  height: 25px;
   justify-content: center;
   align-items: center;
 }
@@ -324,11 +323,16 @@ margin-bottom: 10px;
 .card-item:hover .title-produto {
   display: none;
 }
+.card-item:hover .ing-produto {
+  color: var(--color-black-heavy) !important;
+  margin-top: 20px;
+}
 .card-item:hover .add-carrinho {
   display: flex;
 }
 .card-item:hover .price-produto {
   color: var(--color-black-heavy) !important;
+  font-size: 18px;
   margin-top: 20px;
 }
 

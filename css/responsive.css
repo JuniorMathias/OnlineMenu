@@ -116,7 +116,10 @@
 	.card-item .add-carrinho {
 		margin-top: 5px;
 	}
-
+	.card-item:hover .ing-produto {
+		margin-top: 0px !important;
+	}
+	
 	#itensCardapio .mb-5 {
 		margin-bottom: 15px !important;
 	}
