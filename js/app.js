@@ -52,7 +52,8 @@ cardapio.metodos = {
             .replace(/\${img}/g, e.img)
             .replace(/\${nome}/g, e.name)
             .replace(/\${preco}/g, e.price.toFixed(2).replace('.' , ','))
-            .replace(/\${id}/g, e.id);
+            .replace(/\${id}/g, e.id)
+            .replace(/\${ingredientes}/g, e.ingredientes);
 
             //verificação de ver mais quando for clicado aula 21
             if(vermais && i >= 8 && i < 12){
@@ -560,6 +561,9 @@ cardapio.templates = {
           </div>
           <p class="title-produto text-center mt-4">
               <b>\${nome}</b>
+          </p>
+          <p class="ing-produto">
+              <b>\${ingredientes}</b>
           </p>
           <p class="price-produto text-center">
               <b>R$ \${preco}</b>
