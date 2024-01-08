@@ -89,7 +89,7 @@ var MENU = {
         {
             "id": "the-gramercy-tavern-burger-4-pack",
             "img": "./img/cardapio/burguers/Gramercy-Tavern-Burger-and-Kielbasa-Kit-6.4.21-72ppi-1x1-15.jpg",
-            "name": "Gramercy Tavern",
+            "name": "X burguer",
             "dsc": "The Gramercy Tavern Burger - 4 Pack",
             "price": 10,
             "ingredientes": "Carne, queijo, presunto, alface, tomate"
@@ -97,7 +97,7 @@ var MENU = {
         {
             "id": "shake-shack-shackburger-8-pack",
             "img": "./img/cardapio/burguers/shake-shack-shackburger-8-pack.973a5e26836ea86d7e86a327becea2b0.jpg",
-            "name": "Shake Shack",
+            "name": "X Egg Burguer",
             "dsc": "Shake Shack ShackBurger® - 8 Pack",
             "price": 10,
             "ingredientes": "Carne, queijo, presunto, alface, tomate"

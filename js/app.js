@@ -562,7 +562,7 @@ cardapio.templates = {
           <p class="title-produto text-center mt-4">
               <b>\${nome}</b>
           </p>
-          <p class="ing-produto">
+          <p class="ing-produto text-center">
               <b>\${ingredientes}</b>
           </p>
           <p class="price-produto text-center">
