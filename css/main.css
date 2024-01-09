@@ -333,7 +333,7 @@ margin-bottom: 10px;
 .card-item:hover .price-produto {
   color: var(--color-black-heavy) !important;
   font-size: 18px;
-  margin-top: 20px;
+  margin-top: 10px;
 }
 
 .depoimentos {

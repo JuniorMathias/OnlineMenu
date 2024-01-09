@@ -378,7 +378,7 @@ cardapio.metodos = {
   //validação antes de prosseguir para a etapa 3
   resumoPedido: () => {
     var nome = $("#txtNome").val().trim();
-    var telefone = $("#txtTelefone").val().trim().replace(/(\d{2})(\d{5})(\d{4})/, '($1) $2-$3');
+    var telefone = $("#txtTelefone").val().trim();
     var cep = $("#txtCEP").val().trim();
     var endereco = $("#txtEndereco").val().trim()
     var bairro = $("#txtBairro").val().trim()
