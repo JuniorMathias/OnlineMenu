@@ -66,13 +66,9 @@ cardapio.metodos = {
             }
 
       })
-      //remover o ativo
       $(".container-menu a").removeClass('active');
-      //seta o menu para ativo
       $("#menu-" + categoria).addClass('active');
   },
-
-  //clique do ver mais botão
   verMais:() => {
     //saber qual a opção está ativa da categoria pra poder ver mais 
     var ativo = $(".container-menu a.active").attr('id').split('menu-')[1]; //tá pegando o menu dividindo com split e pegando a categoria
@@ -104,7 +100,6 @@ cardapio.metodos = {
       //obtem a lista de itens
       let filtro = MENU[categoria];
 
-      //obtem o item aula 22, o grep é como um each mas retorna um objeto inteiro
       let item = $.grep(filtro, (e , i) => { return e.id == id }); // vai percorrer todos os id's e vai pegar somente o que for igual o que passei no id
       
       if(item.length > 0) {
@@ -133,10 +128,8 @@ cardapio.metodos = {
 
   },
 
-  //atualiza o total dos Meu carrinho
   atualizarBadgeTotal: () => {
     var total = 0;
-    // e é o total que tem no carrinho atualmente
     $.each(MEU_CARRINHO, (i,e) => {
       total += e.qntd
     })
