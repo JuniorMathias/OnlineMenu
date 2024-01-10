@@ -40,6 +40,7 @@ cardapio.metodos = {
   //obtem a lista de itens do cardápio e categoria é do cardápio
   obterItensCardapio: (categoria = 'burgers', vermais = false) => {
       var filtro = MENU[categoria];
+      console.log(categoria)
 
       if(!vermais){
         $("#itensCardapio").html('');
@@ -68,6 +69,9 @@ cardapio.metodos = {
       })
       $(".container-menu a").removeClass('active');
       $("#menu-" + categoria).addClass('active');
+      if(categoria == 'pizzas'){
+        alert("acertou")
+      }
   },
   verMais:() => {
     //saber qual a opção está ativa da categoria pra poder ver mais 
