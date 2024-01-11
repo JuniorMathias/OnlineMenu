@@ -70,7 +70,8 @@ cardapio.metodos = {
       $(".container-menu a").removeClass('active');
       $("#menu-" + categoria).addClass('active');
       if(categoria == 'pizzas'){
-        alert("acertou")
+        $(".title-produto ").removeClass('hidden');
+        $(".price-produto").addClass('hidden');
       }
   },
   verMais:() => {
