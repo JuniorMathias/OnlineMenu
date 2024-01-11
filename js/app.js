@@ -69,8 +69,10 @@ cardapio.metodos = {
       })
       $(".container-menu a").removeClass('active');
       $("#menu-" + categoria).addClass('active');
-      if(categoria == 'pizzas'){
-        $(".title-produto ").removeClass('hidden');
+      console.log(categoria)
+      if(categoria == 'pizzas' || categoria == 'pizzas-media'){
+        $(".title-produto-pizza ").removeClass('hidden');
+        $(".title-produto").addClass('hidden');
         $(".price-produto").addClass('hidden');
       }
   },
@@ -559,6 +561,9 @@ cardapio.templates = {
           </div>
           <p class="title-produto text-center mt-4">
               <b>\${nome}</b>
+          </p>
+          <p class="title-produto-pizza text-center mt-4 hidden">
+            <b>\${nome}</b>
           </p>
           <p class="ing-produto text-center">
               <b>\${ingredientes}</b>

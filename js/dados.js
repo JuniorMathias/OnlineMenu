@@ -465,6 +465,104 @@ var MENU = {
             "ingredientes": ""
         }
     ],
+    "pizzas-media": [
+        {
+            "id": "2-lou-malnatis-deep-dish-pizzas",
+            "img": "./img/cardapio/pizzas/2-lou-malnatis-deep-dish-pizzas.bf0fe065d251a9cca3925b269d443a27.jpg",
+            "name": "Lou Malnati's Pizza",
+            "dsc": "2 Lou Malnati's Deep Dish Pizzas",
+            "price": 67.99,
+            "ingredientes": ""
+        },
+        {
+            "id": "23699-choose-your-own-thin-crust-pizza-4-pack",
+            "img": "./img/cardapio/pizzas/choose-your-own-thin-crust-pizza-4-pack.b928a2008eab50c65dc87e59b5952190.jpg",
+            "name": "Bartolini's",
+            "dsc": "Choose Your Own Thin Crust Pizza - 4 Pack",
+            "price": 139,
+            "ingredientes": ""
+        },
+        {
+            "id": "choose-your-own-new-haven-style-pizza-6-pack",
+            "img": "./img/cardapio/pizzas/choose-your-own-new-haven-style-pizza-6-pack.ab82828afc6172cdd4017556c15e36dd.jpg",
+            "name": "Zuppardi's Apizza",
+            "dsc": "New Haven-Style Pizza - 6 Pack (Choose Your Own)",
+            "price": 79,
+            "ingredientes": ""
+        },
+        {
+            "id": "6-lou-malnatis-deep-dish-pizzas",
+            "img": "./img/cardapio/pizzas/6-lou-malnatis-deep-dish-pizzas.f59993181da5d295668c8a6fb856055e.jpg",
+            "name": "Lou Malnati's Pizza",
+            "dsc": "6 Lou Malnati's Deep Dish Pizzas",
+            "price": 116.99,
+            "ingredientes": ""
+        },
+        {
+            "id": "wood-fired-pizzas-best-seller-4-pack",
+            "img": "./img/cardapio/pizzas/wood-fired-pizzas-best-seller-4-pack.1653bb05922ba153ac178f8365d27f6d.jpg",
+            "name": "Pizzeria Bianco",
+            "dsc": "Wood Fired Pizzas Best Seller - 4 Pack",
+            "price": 129,
+            "ingredientes": ""
+        },
+        {
+            "id": "236991-choose-your-own-deep-dish-pizza-3-pack",
+            "img": "./img/cardapio/pizzas/choose-your-own-deep-dish-pizza-3-pack.4111791511244a4946bb5c9ad2c17da9.jpg",
+            "name": "Bartolini's",
+            "dsc": "Choose Your Own Deep Dish Pizza - 3 Pack",
+            "price": 139,
+            "ingredientes": ""
+        },
+        {
+            "id": "choose-your-own-detroit-style-pizza-3-pack",
+            "img": "./img/cardapio/pizzas/detroit-style-pizza-choose-your-own-3-pack.6b6f4909ffd4066d5471e70eac5c3d89.jpg",
+            "name": "Emmy Squared",
+            "dsc": "Detroit-Style Pizza - Choose Your Own 3 Pack",
+            "price": 89,
+            "ingredientes": ""
+        },
+        {
+            "id": "brooklyn-pizza-choose-your-own-5-pack",
+            "img": "./img/cardapio/pizzas/brooklyn-pizza-choose-your-own-5-pack.edc4f476a75207d0af840ce6f225f2b3.jpg",
+            "name": "Paesan's Pizza",
+            "dsc": "Brooklyn Pizza - Choose Your Own 5 Pack",
+            "price": 69,
+            "ingredientes": ""
+        },
+        {
+            "id": "choose-your-own-chicago-deep-dish-pizza-4-pack",
+            "img": "./img/cardapio/pizzas/chicago-deep-dish-pizza-4-pack.49927daafa8c147fe9bb2a113e56668e.jpg",
+            "name": "My Pi Pizza",
+            "dsc": "Chicago Deep Dish Pizza - 4 Pack",
+            "price": 129,
+            "ingredientes": ""
+        },
+        {
+            "id": "4-lou-malnatis-deep-dish-pizzas",
+            "img": "./img/cardapio/pizzas/4-lou-malnatis-deep-dish-pizzas.8c79eb7506b5752ab3387d8174246b17.jpg",
+            "name": "Lou Malnati's Pizza",
+            "dsc": "4 Lou Malnati's Deep Dish Pizzas",
+            "price": 96.99,
+            "ingredientes": ""
+        },
+        {
+            "id": "tonys-custom-pizza-3-pack",
+            "img": "./img/cardapio/pizzas/choose-your-own-pizza-3-pack.fcf7a43e38593007ef2857fe16d6dd26.jpg",
+            "name": "Tony's Pizza Napoletana",
+            "dsc": "Choose Your Own Pizza - 3 Pack",
+            "price": 99,
+            "ingredientes": ""
+        },
+        {
+            "id": "plain-thin-crust-pizza-4-pack",
+            "img": "./img/cardapio/pizzas/plain-thin-crust-pizza-4-pack.5540e9d166db2f0853643c6517e4a225.jpg",
+            "name": "The Columbia Inn",
+            "dsc": "Plain Thin Crust Pizza - 4 Pack",
+            "price": 79,
+            "ingredientes": ""
+        }
+    ],
     "steaks": [
         {
             "id": "california-reserve-filet-mignon-steaks-gift-box",
