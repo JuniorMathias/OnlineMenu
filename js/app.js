@@ -77,8 +77,7 @@ cardapio.metodos = {
       }
   },
   verMais:() => {
-    //saber qual a opção está ativa da categoria pra poder ver mais 
-    var ativo = $(".container-menu a.active").attr('id').split('menu-')[1]; //tá pegando o menu dividindo com split e pegando a categoria
+    var ativo = $(".container-menu a.active").attr('id').split('menu-')[1];
     cardapio.metodos.obterItensCardapio(ativo,true);
     $("#btnVerMais").addClass('hidden');
   },
