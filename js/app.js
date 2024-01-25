@@ -91,15 +91,12 @@ cardapio.metodos = {
       $("#qntd-" + id).text(qntdAtual +1);
   },
 
-  //adicionar item ao carrinho o item do cardapio
   adicionarAoCarrinho: (id) => {
     let qntdAtual = parseInt($("#qntd-" + id).text());
 
     if(qntdAtual > 0){
-      //obter a categoria ativa
       var categoria = $(".container-menu a.active").attr('id').split('menu-')[1];
 
-      //obtem a lista de itens
       let filtro = MENU[categoria];
 
       let item = $.grep(filtro, (e , i) => { return e.id == id }); // vai percorrer todos os id's e vai pegar somente o que for igual o que passei no id
