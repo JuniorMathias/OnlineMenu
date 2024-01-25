@@ -48,7 +48,6 @@ cardapio.metodos = {
       }
 
       $.each(filtro, (i, e) => {
-          //linha abaixo está pegando do dados js e trocando o valor e replace com o "E" que é do dados.js e colocando o campo img 
           let temp = cardapio.templates.item
             .replace(/\${img}/g, e.img)
             .replace(/\${nome}/g, e.name)
@@ -56,12 +55,10 @@ cardapio.metodos = {
             .replace(/\${id}/g, e.id)
             .replace(/\${ingredientes}/g, e.ingredientes);
 
-            //verificação de ver mais quando for clicado aula 21
             if(vermais && i >= 8 && i < 12){
               $("#itensCardapio").append(temp);
             }
 
-            //paginação inicial
             if(!vermais && i < 8){
               $("#itensCardapio").append(temp);
             }
@@ -82,7 +79,6 @@ cardapio.metodos = {
     $("#btnVerMais").addClass('hidden');
   },
 
-  //diminuir quantidade do cardapio
   diminuirQuantidade: (id) => {
     let qntdAtual = parseInt($("#qntd-" + id).text());
     if(qntdAtual > 0){
