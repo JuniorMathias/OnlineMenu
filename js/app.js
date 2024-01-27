@@ -2,7 +2,6 @@ $(document).ready(function () {
   cardapio.eventos.init();
 })
 
-// aula 1 de js 
 var cardapio = {};
 
 var MEU_CARRINHO = [];
