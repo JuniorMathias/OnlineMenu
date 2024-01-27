@@ -37,7 +37,6 @@ cardapio.eventos = {
 }
 
 cardapio.metodos = {
-  //obtem a lista de itens do cardápio e categoria é do cardápio
   obterItensCardapio: (categoria = 'burgers', vermais = false) => {
       var filtro = MENU[categoria];
       console.log(categoria)
@@ -99,11 +98,9 @@ cardapio.metodos = {
 
       let filtro = MENU[categoria];
 
-      let item = $.grep(filtro, (e , i) => { return e.id == id }); // vai percorrer todos os id's e vai pegar somente o que for igual o que passei no id
+      let item = $.grep(filtro, (e , i) => { return e.id == id }); 
       
       if(item.length > 0) {
-
-        //VALIDAR SE JÁ EXISTE ESSE ITEM NO CARRINHO
         let existe = $.grep(MEU_CARRINHO, (elem , index) => { return elem.id == id });
 
         //caso já exista o item no carrinho só altera a quantidade
