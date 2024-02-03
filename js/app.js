@@ -102,12 +102,10 @@ cardapio.metodos = {
       if(item.length > 0) {
         let existe = $.grep(MEU_CARRINHO, (elem , index) => { return elem.id == id });
 
-        //caso já exista o item no carrinho só altera a quantidade
         if(existe.length > 0){
           let objIndex = MEU_CARRINHO.findIndex((obj => obj.id == id));
           MEU_CARRINHO[objIndex].qntd = MEU_CARRINHO[objIndex].qntd + qntdAtual;
         }
-        //caso não exista o item no carrinho, adiciona ele
         else {
           item[0].qntd = qntdAtual;
           MEU_CARRINHO.push(item[0])
@@ -136,11 +134,9 @@ cardapio.metodos = {
       $(".container-total-carrinho").addClass("hidden");
     }
 
-    //mostra o valor total que foi adicionado no carrinho  aula 23
     $(".badge-total-carrinho").html(total);
   },
 
-  //abrir modal de carrinho aula 23
   abrirCarrinho: (abrir) => {
     if(abrir){
       $("#modalCarrinho").removeClass('hidden');
@@ -151,7 +147,6 @@ cardapio.metodos = {
 
   },
 
-  // altera os textos e exibe os botões das etapas aula 24 
   carregarEtapa: (etapa) => {
     if(etapa == 1){
       $("#lblTituloEtapa").text('Seu carrinho:');
