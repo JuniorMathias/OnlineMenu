@@ -246,15 +246,12 @@ cardapio.metodos = {
 
   },
 
-  // botão remover item do carrinho
   removerItemCarrinho: (id) => {
-    //mmeu carrinho é filtrado, e retorna o que não tem o id, ele retira 
     MEU_CARRINHO = $.grep(MEU_CARRINHO, (e, i) => { return e.id != id });
     cardapio.metodos.carregarCarrinho();
     cardapio.metodos.atualizarBadgeTotal();
 
   },
-  //atualiza o carrinho com a quantidade atual aula 25 todo abaixo metodo atualizarcarrinho
   atualizarCarrinho: (id, qntd) => {
     let objIndex = MEU_CARRINHO.findIndex((obj => obj.id == id));
     MEU_CARRINHO[objIndex].qntd = qntd;
