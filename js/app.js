@@ -9,7 +9,7 @@ var MEU_ENDERECO = null;
 var VALOR_CARRINHO = 0;
 var VALOR_ENTREGA = 5;
 var CELULAR_EMPRESA = '5585991956331';
-var QUEIJAO = 1;
+var QUEIJAO = 0;
 
 function formatarTelefone(input) {
   let numeroLimpo = input.value.replace(/\D/g, '');
